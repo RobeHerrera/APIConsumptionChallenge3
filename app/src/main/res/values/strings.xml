@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">ConsumptionAPI</string>
     <string name="tv_iniciar_sesion">Iniciar Sesión</string>
+    <string name="hint_correo">Ingresa tu Correo</string>
+    <string name="hint_contrasena">Ingresa tu contraseña</string>
+    <string name="btn_ingresar">Ingresar</string>
 </resources>
