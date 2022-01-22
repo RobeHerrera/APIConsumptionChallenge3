@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ConsumptionAPI</string>
+    <string name="tv_iniciar_sesion">Iniciar Sesión</string>
+</resources>
