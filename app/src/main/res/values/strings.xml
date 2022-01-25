@@ -1,7 +1,27 @@
 <resources>
+    <!--  SharedPreference  -->
+    <string name="name_file_preference">com.robe.consumptionapi.sharedpreferences</string>
+
+    <!--    key de API-->
+    <string name="key_token">plain-text-token</string>
+
+    <!--    Metodos API-->
+    <string name="api_login">login</string>
+    <string name="api_logout">logout</string>
+    <string name="api_register">register</string>
+    <string name="api_books">books</string>
+
+
     <string name="app_name">ConsumptionAPI</string>
     <string name="tv_iniciar_sesion">Iniciar Sesión</string>
     <string name="hint_correo">Ingresa tu Correo</string>
     <string name="hint_contrasena">Ingresa tu contraseña</string>
     <string name="btn_ingresar">Ingresar</string>
+    <string name="txt_cerrar_sesion">Cerrar Sesión</string>
+    <string name="btn_registrar">Registrar</string>
+    <string name="txt_Registro">Registo</string>
+    <string name="txt_Nombre">Nombre</string>
+    <string name="txt_contrasena_dos">Confirmar Contraseña</string>
+    <string name="txt_contrasena">Contraseña</string>
+    <string name="txt_correo">Correo</string>
 </resources>

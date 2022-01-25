@@ -10,10 +10,11 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
-import com.robe.consumptionapi.extra.*
+import com.robe.consumptionapi.extra.iniciarSesion
+import com.robe.consumptionapi.extra.validarSesion
 import org.json.JSONObject
 
-class Login : AppCompatActivity() {
+class Registro : AppCompatActivity() {
 
     private var TAG = Login::class.qualifiedName
 
@@ -25,12 +26,12 @@ class Login : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        if(validarSesion(applicationContext)){
-            lanzarActivity()
-        }
+//        if(validarSesion(applicationContext)){
+//            lanzarActivity()
+//        }
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_registro)
         init()
     }
 
@@ -46,7 +47,8 @@ class Login : AppCompatActivity() {
             json.put("email", tiet_correo.text)
             json.put("password", tiet_contrasena.text)
             json.put("device_name", "User's phone")
-            val peticion = JsonObjectRequest(Request.Method.POST,
+            val peticion = JsonObjectRequest(
+                Request.Method.POST,
                 getString(R.string.url_servidor) + getString(R.string.api_login), json,
                 { response ->
                     val jsonObject = JSONObject(response.toString())
@@ -69,5 +71,4 @@ class Login : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
-
 }

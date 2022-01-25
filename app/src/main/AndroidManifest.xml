@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ConsumptionAPI">
         <activity
+            android:name=".Registro"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
