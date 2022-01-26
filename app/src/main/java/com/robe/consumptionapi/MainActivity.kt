@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.robe.consumptionapi.extra.*
 
@@ -24,31 +25,23 @@ class MainActivity : AppCompatActivity() {
     fun init() {
         btn_cerrar_sesion = findViewById(R.id.btn_cerrar_sesion)
         btn_cerrar_sesion.setOnClickListener {
-            eliminarSesion(applicationContext)
-            startActivity(Intent(this,Login::class.java))
-            finish()
-
-        /*val cola = Volley.newRequestQueue(applicationContext)
-            val peticion = object : JsonObjectRequest(
+            val cola = Volley.newRequestQueue(applicationContext)
+            val peticion = object : StringRequest(
                 Request.Method.POST,
-                getString(R.string.url_servidor)+getString(R.string.api_logout),
-                null,
+                getString(R.string.url_servidor) + getString(R.string.api_logout),
                 { reponse ->
                     Log.d(TAG, "Todo salio bien")
-//                    eliminarSesion(applicationContext)
-//                    startActivity((Intent(this,Login::class.java)))
-//                    finish()
+                    eliminarSesion(applicationContext)
+                    startActivity((Intent(this,Login::class.java)))
+                    finish()
                 },
                 { error ->
                     Log.e(TAG, error.toString())
                 }) {
                 override fun getHeaders(): MutableMap<String, String> {
                     val headers = HashMap<String, String>()
-                    println("Bearer "+ obtenerDeSesion(applicationContext, "token"))
-                    headers.put("Content-Type", "application/json");
-                    headers.put("Authorization","Bearer "+ obtenerDeSesion(applicationContext, "token"))
-//                    headers["Authorization"] =
-//                        "Bearer" + obtenerDeSesion(applicationContext, "token")
+                    headers["Authorization"] = "Bearer ${obtenerDeSesion(applicationContext, "token")}"
+                    //headers.put("Authorization","Bearer "+ obtenerDeSesion(applicationContext, "token"))
                     return headers
                 }
             }
@@ -65,7 +58,7 @@ class MainActivity : AppCompatActivity() {
 //            headers["Authorization"] = "Bearer " + obtenerDeSesion(applicationContext, "token")
 //            peticionDos.headers = headers
 
-            cola.add(peticion)*/
+            cola.add(peticion)
         }
 
 

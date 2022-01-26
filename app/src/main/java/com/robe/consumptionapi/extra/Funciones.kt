@@ -54,3 +54,14 @@ fun eliminarSesion(context: Context){
         apply()
     }
 }
+
+//fun main(){
+//    // Queremos pasar una cadena de carteres
+//    val json = """
+//        {
+//            "plain-text-token":"179|ysUKKNxGtIDAEkBEndknTjCcE2DZyRRDgXXjlEPz"
+//        }
+//    """.trimIndent()
+//    val jsonObject = JSONObject(json)
+//    print(jsonObject.toString())
+//}
